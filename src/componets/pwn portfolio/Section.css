@@ -10,7 +10,7 @@
     background-image: url('../../assest//Group\ 88.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 .header-bg {
@@ -20,6 +20,9 @@
   .header-bg.scrolled {
     background: white !important; 
     color: black;
+  }
+  .bg-change{
+    background-color: #151E3D;
   }
   
   .navbar .nav-link {
@@ -67,7 +70,7 @@ font-weight: 400 !important;}
     position: relative;
     border-radius: 10px;
     box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.2);
-    clip-path: polygon(100% 4px, 100% 0, 90% 100%, 0 100%, 0 4px);
+    clip-path: polygon(100% 0px, 100% 0, 90% 100%, 0 100%, 0 4px);
 }
 .buissness-img{
   width: 450px;
@@ -161,18 +164,58 @@ font-weight: 400 !important;}
 }
 
 .carousel-image {
-  width: 200px; /* Default width for side images */
-  height: auto;
+  width: 200px;
   border-radius: 10px;
+  margin-top: 50px !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease; /* Smooth transition */
 }
 
-/* Scale up the center image */
+/* Center image */
 .slick-center .carousel-image {
-  width: 300px; /* Larger width for the center image */
-  transform: scale(1.2); /* Increase scale for center image */
-  height: auto;
-  margin-bottom: 30px;
+  width: 200px;
+  height: 160px;
+  transform: scale(1.2); /* Slight scale effect for emphasis */
 }
 
+/* Images immediately to the left and right of the center */
+.slick-center ~ .carousel-slide .carousel-image,
+.carousel-slide ~ .slick-center .carousel-image {
+  height: 130px !important;
+}
+
+/* Images two slides away from the center */
+.slick-center ~ .carousel-slide ~ .carousel-slide .carousel-image,
+.carousel-slide ~ .carousel-slide ~ .slick-center .carousel-image {
+  height: 180px;
+}
+
+/* Images three slides away from the center (outermost images) */
+.slick-center ~ .carousel-slide ~ .carousel-slide ~ .carousel-slide .carousel-image,
+.carousel-slide ~ .carousel-slide ~ .carousel-slide ~ .slick-center .carousel-image {
+  height: 100px;
+}
+
+/* form */
+.bg-frame{
+  background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNDIyLTA3Ni14LmpwZw.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+}
+.input{
+  border: 1px solid #151E3D !important;
+}
+.form-heading{
+  color: #151E3D;
+  font-size: 29px;
+}
+.bg-footer{
+  background-image: url('../../assest//Group\ 88.png');
+height: 150px;
+}
+.contact-section p {
+  color: #333;
+  font-size: 1.1rem;
+}

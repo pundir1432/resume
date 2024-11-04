@@ -12,9 +12,10 @@ function App() {
      {/* <Navbar/>
      <Todo/>
      <Count/> */}
-     <Header/>
+     {/* <Header/> */}
      <Hero/>
     </div>
+    
   );
 }
 
