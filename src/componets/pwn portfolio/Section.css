@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700,500,400italic,500italic,700italic,300italic);
 
 .h-screen{
     background-image: url('../../assest//Group\ 88.png');
@@ -22,12 +23,15 @@
     color: black;
   }
   .bg-change{
-    background-color: #151E3D;
+    background-color: #fff;
     width: 100%;
   }
   
   .navbar .nav-link {
     color: black; /* Adjust text color as needed */
+  }
+  .navbar-bg{
+    background-color: none;
   }
   
 .nav-link{
@@ -40,7 +44,7 @@ font-weight: 400 !important;}
     margin-left: 16%;
 }
 .athira h4{
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 800;
     letter-spacing: 8%;
     font-family: 'Spartan', sans-serif;
@@ -66,7 +70,7 @@ font-weight: 400 !important;}
 }
 .buissness-img2{
     width: 450px;
-    height: 600px !important;
+    height: 500px !important;
     background-size: cover;
     position: relative;
     border-radius: 10px;
@@ -75,7 +79,7 @@ font-weight: 400 !important;}
 }
 .buissness-img{
   width: 450px;
-  height: 600px;
+  height: 500px !important;
   background-size: cover;
   position: relative;
   border-radius: 10px;
@@ -199,18 +203,25 @@ font-weight: 400 !important;}
 
 /* form */
 .bg-frame{
-  background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNDIyLTA3Ni14LmpwZw.jpg');
+  background-image: url('https://as2.ftcdn.net/v2/jpg/03/09/34/57/1000_F_309345760_JFU1wcpn3dNRZzUHz8FGV6MCUJHU5yyE.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
 }
 .input{
-  border: 1px solid #151E3D !important;
+  border: 1px solid #cccdd1 !important;
+  height: 50px !important;
 }
 .form-heading{
   color: #151E3D;
   font-size: 29px;
+}
+.form-heading-para{
+  font-size: 16px;
+  color: rgb(199, 191, 191);
+  word-spacing: 10px;
+  line-height: 30px;
 }
 .bg-footer{
   background-image: url('../../assest//Group\ 88.png');
@@ -223,6 +234,45 @@ height: auto;
   color: #333;
   font-size: 1.1rem;
 }
+
+/* Button styling */
+.button {
+  all: unset;
+  height: 50px;
+  width: 120px;
+  text-align: center;
+  background-color: #151E3D;
+  color: #fff;
+  border-radius: 5px;
+  outline-offset: 5px;
+  transition: 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+/* Progress bar styling */
+.progress {
+  position: absolute;
+  inset: 20px 0 0 0;
+  background-image: linear-gradient(to top, royalblue, deeppink);
+  clip-path: polygon(0 0, 20% 20%, 100% 0, 100% 100%, 0 100%);
+}
+
+.value {
+  position: relative;
+}
+
+/* Button animation when download starts */
+.button.start-download {
+  width: 50px;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 768px) and (min-width: 360px) {
   .athira{
     margin-top: 1%;
@@ -237,16 +287,20 @@ height: auto;
 .h-screen{
   height: 242px;
 }
+.navbar-bg{
+  background-color: #151E3D;
+  margin-top: -10px;
+}
 .buissness-img2{
   width: 100%;
-  height: 400px;
+  height: 346px !important;
   background-size: contain;
   clip-path: none;
 
 }
 .buissness-img{
 width: 450px;
-height: 400px;
+height: 346px !important;
 background-size: contain;
 clip-path: none;
 }
@@ -275,9 +329,10 @@ clip-path: none;
 .form-heading {
   color: #151E3D;
   font-size: 15px;
+  margin-top: 20px;
 }
 .input{
-  height: 26px;
+  height: 26px !important;
 }
 .input::placeholder{
   font-size: 12px;
@@ -295,7 +350,11 @@ clip-path: none;
   width: 100%;
 }
 .bg-change {
-  height: 70px;
+  height: 62px;
 
+}
+.nav-link{
+  font-size: 15px !important;
+  color: white !important;
 }
 }
