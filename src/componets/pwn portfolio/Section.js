@@ -12,6 +12,7 @@ import { FaTwitter, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Section.css'
 import Slider from 'react-slick';
 import { about, logo } from '../../assest/images';
+import SectionModal from './SectionModal';
 const skillsData = [
   { name: 'C', backgroundImage: 'https://img.freepik.com/free-vector/branding-identity-corporate-c-logo-vector-design-template_460848-13936.jpg?semt=ais_hybrid' },
   { name: 'HTML5', backgroundImage: 'https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_640.png' },
@@ -61,6 +62,9 @@ function Hero() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const [open, setOpen] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
+
   const {
     register,
     handleSubmit,
@@ -71,16 +75,17 @@ function Hero() {
     resolver: yupResolver(schema),
   });
 
-  // Function to handle form submission
   const onSubmit = (data) => {
-    console.log('Form Data:', data);
-    setValue('')
-    reset()
-
+    setSubmittedData(data); 
+    setOpen(true);          
+    reset();                
   };
+
+  const handleClose = () => setOpen(false);
+
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
+      duration: 1000, 
     });
   }, []);
   const settings = {
@@ -120,14 +125,14 @@ function Hero() {
         <div className="row mx-auto">
           <div className="col-12 border-0">
             <nav className={`navbar navbar-expand-lg ${scrolled ? 'bg-change' : 'header-bg'} fixed-top border-none`}>
-            
+
               <div className="container-fluid ">
-              <a href="" className="navbar-brand mb-3 p-0">
-                <img src={logo} alt="" className='img-fluid me-auto mt-2 rounded-circle d-lg-none' style={{width:'40px', height:'40px'}} />
-              </a>
-              <button className="navbar-toggler text-white border-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="bi bi-list"></i>
-    </button>
+                <a href="" className="navbar-brand mb-3 p-0">
+                  <img src={logo} alt="" className='img-fluid me-auto mt-2 rounded-circle d-lg-none' style={{ width: '40px', height: '40px' }} />
+                </a>
+                <button className="navbar-toggler text-white border-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="bi bi-list"></i>
+                </button>
                 <div className="collapse navbar-collapse p" id="navbarSupportedContent">
                   <ul className="navbar-nav ps-5  me-auto mb-2 mb-lg-0">
                     <li className="nav-item ps-5" onClick={() => scrollToSection('home')}>
@@ -171,7 +176,7 @@ function Hero() {
                 <div className="div athira" data-aos="fade-down-right">
                   <h4>PANKAJ SINGH</h4>
                   <p>Engineer + Junior Front-end Developer</p>
-                  <div className="d-flex justify-content-center space-x-6 mt-5">
+                  <div className="d-flex justify-content-center justify-content-lg-start space-x-6 mt-5">
                     <a href="https://twitter.com" target="_blank" className='rounded-circle  py-2 p-0 px-2 icon' rel="noopener noreferrer">
                       <FaTwitter size={32} className='text-dark d-none d-lg-block' />
                       <FaTwitter size={23} className='text-dark d-lg-none' />
@@ -203,14 +208,14 @@ function Hero() {
       <section id="about">
         <div className="container mt-lg-5 ">
           <div className="row mx-auto">
-            {/* data-aos="zoom-out-right" */}
-            <div className="col-12 col-lg-5 d-lg-flex flex-column justify-content-lg-end" >
+            <div className="col-12 col-lg-5 d-lg-flex flex-column justify-content-lg-end"data-aos="fade-down"
+>
               <img src={about} className='img-fluid buissness-img ms-auto mt-lg-0 mt-5' alt="" />
               <p style={{ color: 'black' }} className='mx-5 mt-4'><i class="bi bi-arrow-down-circle"></i> Scroll</p>
 
             </div>
-            {/* data-aos="zoom-out-left" */}
-            <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center  " >
+            <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center  "data-aos="fade-down"
+>
               <div className="div-about text-start  w-75">
                 <h3>About me</h3>
                 <p className="py-2 text-muted">
@@ -229,15 +234,15 @@ function Hero() {
       <section id="skills">
         <div className="container mt-lg-5">
           <div className="row">
-            {/* data-aos="zoom-out-right" */}
-            <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center  " >
+            <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center  " data-aos="fade-down"
+>
               <div className="div-about text-start mt-lg-5 w-75">
                 <h3>Skills</h3>
                 <p className="py-2 text-muted">
                   I enjoy creating things that live on the internet whether that be websites, applications, or anything in between.
                 </p>
-                {/* data-aos="fade-up" data-aos-anchor-placement="center-bottom" */}
-                <div className="skills-container mt-5" >
+                <div className="skills-container mt-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
+>
                   {skillsData.map((skill) => (
                     <div className="skill" key={skill.name}>
                       <div
@@ -257,8 +262,8 @@ function Hero() {
                 <p style={{ color: '#928A97' }} className='mt-5'><i class="bi bi-arrow-down-circle"></i> Scroll</p>
               </div>
             </div>
-            {/* data-aos="zoom-out-left" */}
-            <div className="col-12 col-lg-5" >
+            <div className="col-12 col-lg-5"data-aos="fade-down"
+>
               <img src="https://www.shutterstock.com/image-photo/young-casual-business-woman-sitting-600nw-2461145297.jpg" className='img-fluid buissness-img2 ms-auto' alt="" />
 
             </div>
@@ -294,61 +299,63 @@ function Hero() {
               <div className="col-12 bg-light p-lg-3">
                 <div className="row">
                   <div className="col-12 col-lg-5">
-                  {/* data-aos="flip-left"
-                      data-aos-easing="ease-out-cubic" */}
-                    <div className="div d-flex justify-content-center align-items-center" 
+              
+                    <div className="div d-flex justify-content-center align-items-center"      data-aos="flip-left"
+                      data-aos-easing="ease-out-cubic"
                       data-aos-duration="3000" >
                       <h2 className='form-heading  mt-lg-5 mt-3' >Drop me a line I would like to hear from you.</h2>
                     </div>
                   </div>
-                  <div className="col-12 col-lg-7"  >
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* data-aos="zoom-out" */}
-                      <h3 className='form-heading px-2 px-lg-0' >Get in Touch</h3>
+                  <div className="col-12 col-lg-7 p-lg-5"  >
+                  <form onSubmit={handleSubmit(onSubmit)}>
+        <h3 className='form-heading px-2 px-lg-0' data-aos="zoom-out">Get in Touch</h3>
 
-                      {/* Name Input */}
-                      <input
-                        type="text"
-                        placeholder="Name"
-                        className='form-control mb-3 input'
-                        {...register('name')}
-                      />
-                      {errors.name && <p className="text-danger" style={{fontSize:'13px'}}>{errors.name.message}</p>}
+        {/* Name Input */}
+        <input
+          type="text"
+          placeholder="Name"
+          className='form-control mb-3 input'
+          {...register('name')}
+        />
+        {errors.name && <p className="text-danger" style={{ fontSize: '13px' }}>{errors.name.message}</p>}
 
-                      {/* Email Input */}
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className='form-control mb-3 input'
-                        {...register('email')}
-                      />
-                      {errors.email && <p className="text-danger" style={{fontSize:'13px'}}>{errors.email.message}</p>}
+        {/* Email Input */}
+        <input
+          type="email"
+          placeholder="Email"
+          className='form-control mb-3 input'
+          {...register('email')}
+        />
+        {errors.email && <p className="text-danger" style={{ fontSize: '13px' }}>{errors.email.message}</p>}
 
-                      {/* Message Textarea */}
-                      <textarea
-                        placeholder="Message"
-                        className='form-control mb-3 input'
-                        {...register('message')}
-                      />
-                      {errors.message && <p className="text-danger" style={{fontSize:'13px'}}>{errors.message.message}</p>}
+        {/* Message Textarea */}
+        <textarea
+          placeholder="Message"
+          className='form-control mb-3 input'
+          {...register('message')}
+        />
+        {errors.message && <p className="text-danger" style={{ fontSize: '13px' }}>{errors.message.message}</p>}
 
-                      {/* Submit Button */}
-                      <button
-                        type="submit"
-                        className="btn p-2 px-3 text-white d-none d-lg-block"
-                        data-aos="zoom-out"
-                        style={{ backgroundColor: '#151E3D' }}
-                      >
-                        Send Message
-                      </button>
-                      <button
-                        type="submit"
-                        className="btn p-1 px-1 text-white d-lg-none mb-2"
-                        style={{ backgroundColor: '#151E3D',fontSize:'13px' }}
-                      >
-                        Send Message
-                      </button>
-                    </form>
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="btn p-2 px-3 text-white d-none d-lg-block"
+          data-aos="zoom-out"
+          style={{ backgroundColor: '#151E3D' }}
+        >
+          Send Message
+        </button>
+        <button
+          type="submit"
+          className="btn p-1 px-1 text-white d-lg-none mb-2"
+          style={{ backgroundColor: '#151E3D', fontSize: '13px' }}
+        >
+          Send Message
+        </button>
+      </form>
+
+      {/* Modal Component */}
+      <SectionModal open={open} handleClose={handleClose} data={submittedData} />
                   </div>
                 </div>
               </div>
@@ -361,23 +368,23 @@ function Hero() {
               <div className="col-12 text-center p-3 contact-section" data-aos="flip-down">
                 <p className=' text-white'>Pankaj singh</p>
                 <div className="d-flex justify-content-center space-x-6 mt-3">
-                    <a href="https://twitter.com" target="_blank" className='rounded-circle  py-2 p-0 px-2 icon' rel="noopener noreferrer">
-                      <FaTwitter size={32} className='text-dark d-none d-lg-block' />
-                      <FaTwitter size={23} className='text-dark d-lg-none' />
-                    </a>
-                    <a href="https://github.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
-                      <FaGithub size={32} className='text-dark d-none d-lg-block' />
-                      <FaGithub size={23} className='text-dark d-lg-none' />
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
-                      <FaLinkedin size={32} className='text-dark d-none d-lg-block' />
-                      <FaLinkedin size={23} className='text-dark d-lg-none' />
-                    </a>
-                    <a href="https://instagram.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
-                      <FaInstagram size={32} className='text-dark d-none d-lg-block' />
-                      <FaInstagram size={23} className='text-dark d-lg-none' />
-                    </a>
-                  </div>
+                  <a href="https://twitter.com" target="_blank" className='rounded-circle  py-2 p-0 px-2 icon' rel="noopener noreferrer">
+                    <FaTwitter size={32} className='text-dark d-none d-lg-block' />
+                    <FaTwitter size={23} className='text-dark d-lg-none' />
+                  </a>
+                  <a href="https://github.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
+                    <FaGithub size={32} className='text-dark d-none d-lg-block' />
+                    <FaGithub size={23} className='text-dark d-lg-none' />
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
+                    <FaLinkedin size={32} className='text-dark d-none d-lg-block' />
+                    <FaLinkedin size={23} className='text-dark d-lg-none' />
+                  </a>
+                  <a href="https://instagram.com" target="_blank" className='rounded-circle mx-2  py-2 p-0 px-2 icon' rel="noopener noreferrer">
+                    <FaInstagram size={32} className='text-dark d-none d-lg-block' />
+                    <FaInstagram size={23} className='text-dark d-lg-none' />
+                  </a>
+                </div>
                 <p className='mt-3 text-white'>All Rights Reserved &copy; {new Date().getFullYear()} Pankaj Singh</p>
               </div>
             </div>
