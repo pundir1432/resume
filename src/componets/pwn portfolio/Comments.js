@@ -45,8 +45,8 @@ const Comments = () => {
                 onChange={(e) => setNewComment(e.target.value)}
                 placeholder="Add comment"
               />
-              <button className="btn border p-2" onClick={handleAddComment}>
-                <i className="bi bi-plus-square-fill fs-5 text-primary"></i>
+              <button className="btn border p-lg-2 input p-0 pt-0" onClick={handleAddComment}>
+                <i className="bi bi-plus-square-fill fs-5  text-primary"></i>
               </button>
             </div>
 
@@ -67,7 +67,7 @@ const Comments = () => {
                           onChange={(e) => setNewText(e.target.value)}
                           placeholder="Edit comment"
                         />
-                        <button className="btn btn-success input" onClick={handleSaveEdit}>
+                        <button className="btn p-0 p-lg-2 input" onClick={handleSaveEdit}>
                           <i className="bi bi-cloud-download-fill text-success"></i>
                         </button>
                       </div>

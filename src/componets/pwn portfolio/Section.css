@@ -416,4 +416,14 @@ clip-path: none;
 .address h5{
   font-size: 12px;
 }
+.bg-footer {
+  /* background-image: url('../../assest/Group\ 88.png'); */
+  background-color: #151E3D;
+  width: 100%;
+  clip-path: none;
+  animation: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+}
 }

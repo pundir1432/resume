@@ -389,12 +389,12 @@ return (
                 <div className="col-12 col-lg-5 px-lg-4">
                   <h1 className='form-heading px-2 mb-lg-5 px-lg-4' style={{ wordSpacing: '10px' }} data-aos="zoom-out">GET IN <span className="text-danger">TOUCH</span></h1>
 
-                  <div className="div " data-aos="flip-left"
+                  <div className="div w-100 " data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="3000" >
                     <h2 className='form-heading-para  mt-lg-2 px-lg-4 mt-3' >Please fill out the form on this section to contact with me . call between saturday to sunday anytime.</h2>
                     <div className="d-flex px-lg-4 mt-3 w-100">
-                      <div className="address">
+                      <div className="address w-100">
                         <h5 className='mt-lg-1'> <i class="bi bi-geo-alt"></i> Address:</h5>
                         <h5 className='mt-lg-4'><i class="bi bi-envelope"></i> Email:</h5>
                         <h5 className='mt-lg-4'><i class="bi bi-telephone"></i> Phone:</h5>
@@ -403,14 +403,14 @@ return (
                         <h5 className='mt-lg-4'><i class="bi bi-facebook"></i> Facebook:</h5>
                         <h5 className='mt-lg-4'><i class="bi bi-whatsapp"></i> Whatsapp:</h5>
                       </div>
-                      <div className="link px-3">
+                      <div className="link px-3 w-100">
                         <p className='form-heading-address '> INDUSTRIAL AREA PHASE 1 CHANDIGARH</p>
                         <p className='form-heading-address'>pankajpundir228@gmail.com</p>
                         <p className='form-heading-address'>7668038069</p>
                         <p className='form-heading-address'><a className=' form-heading-address' href="https://resume-r29u.vercel.app/?vercelToolbarCode=oczRWGze1K-SBg0">resume-r29u-phxsxfh4u-p7ps-projects</a></p>
-                        <p className='form-heading-address'><a className=' form-heading-address' href="">mr.p_7_p</a></p>
-                        <p className='form-heading-address'><a className=' form-heading-address' href="">Pankaj Pundir Pankaj</a></p>
-                        <p className='form-heading-address'><a className=' form-heading-address' href="">7534918002</a></p>
+                        <p className='form-heading-address'><a className=' form-heading-address' href="https://www.instagram.com/mr.p_7_p?igsh=NXQzYTh1emlwa2E=">mr.p_7_p</a></p>
+                        <p className='form-heading-address'><a className=' form-heading-address' href="https://www.facebook.com/pankajpundir.pankaj.79">Pankaj Pundir Pankaj</a></p>
+                        <p className='form-heading-address'><a className=' form-heading-address' href="https://whatsapp.com/dl/">7534918002</a></p>
                       </div>
                     </div>
                   </div>
@@ -471,7 +471,7 @@ return (
           </div>
         </div>
       </div>
-      <div className="todo-bg">
+      <div className="todo-bg mb-lg-0 mb-2">
         <div className="container p-3">
           <div className="row">
             <div className="col-12 col-lg-6">
