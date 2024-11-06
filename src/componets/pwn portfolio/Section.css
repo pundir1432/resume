@@ -217,19 +217,65 @@ font-weight: 400 !important;}
   color: #151E3D;
   font-size: 29px;
 }
+.address h5{
+  font-size: 18px;
+  font-weight: 600;
+}
+.form-heading-address{
+  font-size: 16px;
+  color: rgb(199, 191, 191);
+  word-spacing: 10px;
+  line-height: 30px;
+  text-decoration: none !important;
+}
 .form-heading-para{
   font-size: 16px;
   color: rgb(199, 191, 191);
   word-spacing: 10px;
   line-height: 30px;
 }
-.bg-footer{
-  background-image: url('../../assest//Group\ 88.png');
-  width:100%;
+.bg-footer {
+  /* background-image: url('../../assest/Group\ 88.png'); */
+  background-color: #151E3D;
+  width: 100%;
+  clip-path: polygon(0 30%, 10% 10%, 25% 40%, 50% 2%, 75% 50%, 90% 65%, 100% 30%, 100% 100%, 0% 100%);
+  animation: waveAnimation 2s ease-in-out infinite;
   background-size: cover;
   background-repeat: no-repeat;
-height: auto;
+  height: auto;
 }
+
+/* Define the keyframes for the clip-path animation */
+@keyframes waveAnimation {
+  0% {
+      clip-path: polygon(0 30%, 10% 10%, 25% 40%, 50% 2%, 75% 50%, 90% 65%, 100% 30%, 100% 100%, 0% 100% );
+  }
+  50% {
+      clip-path: polygon(0 35%, 10% 15%, 25% 35%, 50% 5%, 75% 55%, 90% 70%, 100% 35%, 100% 100%, 0% 100%);
+  }
+  100% {
+      clip-path: polygon(0 30%, 10% 10%, 25% 40%, 50% 2%, 75% 50%, 90% 65%, 100% 30%, 100% 100%, 0% 100%);
+  }
+}
+
+.todo-bg{
+background-color: #151E3D;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.comment-list {
+  max-height: 80px;
+  overflow-y: auto; 
+}
+
+.show-scroll {
+  max-height: 140px; 
+  overflow-y: auto; 
+}
+
+
 .contact-section p {
   color: #333;
   font-size: 1.1rem;
@@ -356,5 +402,18 @@ clip-path: none;
 .nav-link{
   font-size: 15px !important;
   color: white !important;
+}
+.form-heading-address{
+  font-size: 10px;
+  word-spacing: 2px;
+  line-height: 7px;
+  
+}
+.form-heading-para{
+  font-size: 12px;
+  line-height: 17px;
+}
+.address h5{
+  font-size: 12px;
 }
 }
